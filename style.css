@@ -529,3 +529,40 @@ footer {
     margin-top: 20px;
     font-family: 'Noto Sans KR', sans-serif;
 }
+/* --- 📢 망상 뉴스 바 (CSS 애니메이션) --- */
+.news-ticker {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    z-index: 100;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 0.9rem;
+    border-top: 2px solid #ff6b6b;
+}
+
+.ticker-wrap {
+    display: inline-block;
+    padding-left: 100%; /* 오른쪽 끝에서 시작 */
+    animation: ticker 20s linear infinite; /* 20초 동안 무한 반복 */
+}
+
+.ticker-item {
+    display: inline-block;
+    padding-right: 0;
+}
+
+@keyframes ticker {
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-100%, 0, 0); }
+}
+
+/* 뉴스 바 때문에 하단 내용이 가려지지 않게 body 여백 추가 */
+body {
+    padding-bottom: 50px; 
+}
